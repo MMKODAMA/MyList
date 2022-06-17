@@ -1,1 +1,143 @@
-<p>movies works!</p>
+<h2 style="margin-left: 50px;margin-top:20px ;">Lista de Filmes</h2>
+
+<table mat-table [dataSource]="movies" class="mat-elevation-z8" id="tabela" style="width: 100%;">
+  <!--COLUNA ID-->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let movie">{{movie.id}}</td>
+  </ng-container>
+  <!--COLUNA NOME-->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell *matCellDef="let movie">{{movie.name}}</td>
+  </ng-container>
+  <!--COLUNA ANO -->
+  <ng-container matColumnDef="ano">
+    <th mat-header-cell *matHeaderCellDef>Ano</th>
+    <td mat-cell *matCellDef="let movie">{{movie.ano}}</td>
+  </ng-container>
+  <!--COLUNA Genero-->
+  <ng-container matColumnDef="genero">
+    <th mat-header-cell *matHeaderCellDef>Genero</th>
+    <td mat-cell *matCellDef="let movie" >{{movie.genero}}</td>
+  </ng-container>
+  <!--COLUNA Status-->
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let movie">{{movie.status}}</td>
+  </ng-container>
+  <!--COLUNA nota-->
+  <ng-container matColumnDef="nota">
+    <th mat-header-cell *matHeaderCellDef>Nota</th>
+    <td mat-cell *matCellDef="let movie">{{movie.nota}}</td>
+  </ng-container>
+  <!--COLUNA ACTIONS-->
+  <ng-container matColumnDef="acoes">
+    <th mat-header-cell *matHeaderCellDef>Açoes</th>
+    <td mat-cell *matCellDef="let movie">
+      <button mat-button (click)="deletar(movie.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-button (click)="editar(movie)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+  <tr mat-row *matRowDef="let row;columns:colunas"></tr>
+</table>
+
+<button class="fab" color="primary" mat-fab (click)="novo()" style="margin: 0px 50px 50px 50px ;">
+  <mat-icon>add</mat-icon>
+</button>
+<br><br>
+<!-- Inputs de cadastro -->
+<div *ngIf="movie">
+  <!-- INPUT NOME -->
+  <mat-form-field class="form-field">
+    <mat-label>
+      Nome
+    </mat-label>
+    <input matInput type="text" [(ngModel)]="movie.name" required>
+  </mat-form-field>
+  <br><br>
+  <!-- INPUT Ano -->
+  <mat-form-field class="form-field">
+    <mat-label>
+      Ano
+    </mat-label>
+    <input matInput type="number" [(ngModel)]="movie.ano" required>
+  </mat-form-field>
+  <br><br>
+  <!-- INPUT GENERO -->
+  <mat-form-field appearance="fill">
+    <mat-label>Genero</mat-label>
+    <mat-select [(ngModel)]="movie.genero" required>
+      <mat-option *ngFor="let genre of genres" [value]="genre.name">
+        {{genre.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br><br>
+  <!-- INPUT STATUS -->
+  <mat-form-field appearance="fill">
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="movie.status" required>
+      <mat-option [value]="'Quero'">
+        Quero
+      </mat-option>
+      <mat-option [value]="'Tenho'">
+        Tenho
+      </mat-option>
+      <mat-option [value]="'Terminei'">
+        Terminei
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br><br>
+  <!-- INPUT NOTA -->
+  <mat-form-field appearance="fill">
+    <mat-label>Nota</mat-label>
+    <mat-select [(ngModel)]="movie.nota" required>
+      <mat-option [value]="0">
+        0
+      </mat-option>
+      <mat-option [value]="1">
+        1
+      </mat-option>
+      <mat-option [value]="2">
+        2
+      </mat-option>
+      <mat-option [value]="3">
+        3
+      </mat-option>
+      <mat-option [value]="4">
+        4
+      </mat-option>
+      <mat-option [value]="5">
+        5
+      </mat-option>
+      <mat-option [value]="6">
+        6
+      </mat-option>
+      <mat-option [value]="7">
+        7
+      </mat-option>
+      <mat-option [value]="8">
+        8
+      </mat-option>
+      <mat-option [value]="9">
+        9
+      </mat-option>
+      <mat-option [value]="10">
+        10
+      </mat-option>
+
+    </mat-select>
+  </mat-form-field>
+  <br><br>
+
+  <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+</div>
+

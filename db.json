@@ -28,7 +28,7 @@
       "nota": "10"
     }
   ],
-  "books": [
+  "book": [
     {
       "id": 1,
       "name": "Maze Runner",
@@ -36,9 +36,17 @@
       "genero": "aventura",
       "status": "tenho",
       "nota": "10"
+    },
+    {
+      "id": 2,
+      "name": "Game of Thrones",
+      "autor": "George R. R. Martin",
+      "genero": "BR",
+      "status": "Quero",
+      "nota": 10
     }
   ],
-  "movies": [
+  "movie": [
     {
       "id": 1,
       "name": "Mercenarios",
@@ -68,6 +76,11 @@
       "id": 4,
       "name": "TPS",
       "color": "#b92d2d"
+    },
+    {
+      "id": 5,
+      "name": "Terror",
+      "color": "#008000"
     }
   ]
 }
