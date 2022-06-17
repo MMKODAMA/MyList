@@ -1,0 +1,73 @@
+{
+  "game": [
+    {
+      "id": 1,
+      "name": "League of Legends",
+      "dev": "Riot",
+      "genero": "MOBA",
+      "plataforma": "pc",
+      "status": "tenho",
+      "nota": "10"
+    },
+    {
+      "id": 2,
+      "name": "Apex Legends",
+      "dev": "EA",
+      "genero": "BR",
+      "plataforma": "pc",
+      "status": "tenho",
+      "nota": "11"
+    },
+    {
+      "id": 3,
+      "name": "Valorant",
+      "dev": "Riot",
+      "genero": "FPS",
+      "plataforma": "PC",
+      "status": "TENHO",
+      "nota": "10"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "name": "Maze Runner",
+      "autor": "X",
+      "genero": "aventura",
+      "status": "tenho",
+      "nota": "10"
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "name": "Mercenarios",
+      "ano": "2012",
+      "genero": "açao",
+      "status": "tenho",
+      "nota": "10"
+    }
+  ],
+  "genre": [
+    {
+      "id": 1,
+      "name": "FPS",
+      "color": "#e22828"
+    },
+    {
+      "id": 2,
+      "name": "BR",
+      "color": "#269c34"
+    },
+    {
+      "id": 3,
+      "name": "MOBA",
+      "color": "#435fb1"
+    },
+    {
+      "id": 4,
+      "name": "TPS",
+      "color": "#b92d2d"
+    }
+  ]
+}

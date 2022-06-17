@@ -1,0 +1,61 @@
+<h2 style="margin-left: 50px;margin-top:20px ;">Manutenção de Generos</h2>
+
+<table mat-table [dataSource]="genres" class="mat-elevation-z8" id="tabela" style="width: 100%;">
+  <!--COLUNA ID-->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let genre">{{genre.id}}</td>
+  </ng-container>
+  <!--COLUNA NOME-->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell *matCellDef="let genre">{{genre.name}}</td>
+  </ng-container>
+  <!--COLUNA Dev-->
+  <ng-container matColumnDef="color">
+    <th mat-header-cell *matHeaderCellDef>Cor</th>
+    <td mat-cell *matCellDef="let genre">{{genre.color}}</td>
+  </ng-container>
+  <!--COLUNA ACTIONS-->
+  <ng-container matColumnDef="acoes">
+    <th mat-header-cell *matHeaderCellDef>Açoes</th>
+    <td mat-cell *matCellDef="let genre">
+      <button mat-button (click)="deletar(genre.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-button (click)="editar(genre)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+  <tr mat-row *matRowDef="let row;columns:colunas"></tr>
+</table>
+
+<button class="fab" color="primary" mat-fab (click)="novo()" style="margin: 0px 50px 50px 50px ;">
+  <mat-icon>add</mat-icon>
+</button>
+<br><br>
+<!-- Inputs de cadastro -->
+<div *ngIf="genre">
+  <!-- INPUT NOME -->
+  <mat-form-field class="form-field">
+    <mat-label>
+      Nome
+    </mat-label>
+    <input matInput type="text" [(ngModel)]="genre.name" required>
+  </mat-form-field>
+
+  <br><br>
+  <!-- INPUT Color -->
+  <mat-form-field class="form-field">
+    <mat-label>
+      Cor
+    </mat-label>
+    <input matInput type="color" [(ngModel)]="genre.color" id="colorSelector" required>
+  </mat-form-field>
+  <br><br>
+
+  <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+</div>
