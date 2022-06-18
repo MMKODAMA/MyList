@@ -3,6 +3,7 @@ export class Movie {
   "name" = "";
   "ano" = "";
   "genero" = "";
+  "generoCor"="";
   "status" = "";
   "nota" = "";
 }

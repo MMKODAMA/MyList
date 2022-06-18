@@ -3,6 +3,7 @@ export class Book {
   "name" = "";
   "autor" = "";
   "genero" = "";
+  "generoCor"="";
   "status" = "";
   "nota" = "";
 }

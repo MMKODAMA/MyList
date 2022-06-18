@@ -3,6 +3,7 @@ export class Game{
   "name"= "";
   "dev"= "";
   "genero"= "";
+  "generoCor"="";
   "plataforma"= "";
   "status"= "";
   "nota"="";

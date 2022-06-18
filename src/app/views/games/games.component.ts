@@ -16,7 +16,7 @@ genres = new Array<Genre>()
 game?:Game;
 games = new Array<Game>()
 modificando=false;
-colunas=['id','name','dev','genero','plataforma','status','nota','acoes']
+colunas=['id','name','dev','genero','generoCor','plataforma','status','nota','acoes']
 
 
 
@@ -39,11 +39,22 @@ colunas=['id','name','dev','genero','plataforma','status','nota','acoes']
   salvar(){
     if(this.game){
       if(!this.modificando){
+        this.genres.forEach (genre => {
+          if(this.game?.genero==genre.name){
+            this.game.generoCor=genre.color;
+          }
+        });
+
         this.gamesService.criar(this.game).subscribe(game =>{
           this.game=undefined;
           this.listar();
         });
       }else{
+        this.genres.forEach (genre => {
+          if(this.game?.genero==genre.name){
+            this.game.generoCor=genre.color;
+          }
+        });
         this.gamesService.atualizar(this.game).subscribe(game=>{
           this.modificando = false;
           this.game= undefined;

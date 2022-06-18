@@ -19,7 +19,15 @@
   <!--COLUNA Genero-->
   <ng-container matColumnDef="genero">
     <th mat-header-cell *matHeaderCellDef>Genero</th>
-    <td mat-cell *matCellDef="let book" >{{book.genero}}</td>
+    <td mat-cell *matCellDef="let book">{{book.genero}}</td>
+  </ng-container>
+  <!--COLUNA GenerocOR-->
+  <ng-container matColumnDef="generoCor">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let book">
+      <div style="width: 20px; height: 20px;background-color:{{book.generoCor}};border-radius:50%;margin-right:10px;">
+      </div>
+    </td>
   </ng-container>
   <!--COLUNA Status-->
   <ng-container matColumnDef="status">
@@ -84,14 +92,14 @@
   <mat-form-field appearance="fill">
     <mat-label>Status</mat-label>
     <mat-select [(ngModel)]="book.status" required>
-      <mat-option [value]="'Quero'">
-        Quero
+      <mat-option [value]="'Quero Ler'">
+        Quero Ler
       </mat-option>
-      <mat-option [value]="'Tenho'">
-        Tenho
+      <mat-option [value]="'Lendo'">
+        Lendo
       </mat-option>
-      <mat-option [value]="'Terminei'">
-        Terminei
+      <mat-option [value]="'Terminei de Ler'">
+        Terminei de Ler
       </mat-option>
     </mat-select>
   </mat-form-field>

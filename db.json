@@ -5,27 +5,20 @@
       "name": "League of Legends",
       "dev": "Riot",
       "genero": "MOBA",
-      "plataforma": "pc",
-      "status": "tenho",
-      "nota": "10"
+      "generoCor": "#435fb1",
+      "plataforma": "Mobile",
+      "status": "Terminei",
+      "nota": 7
     },
     {
       "id": 2,
       "name": "Apex Legends",
       "dev": "EA",
-      "genero": "BR",
-      "plataforma": "pc",
-      "status": "tenho",
-      "nota": "11"
-    },
-    {
-      "id": 3,
-      "name": "Valorant",
-      "dev": "Riot",
-      "genero": "FPS",
+      "genero": "Battle Royale",
+      "generoCor": "#269c34",
       "plataforma": "PC",
-      "status": "TENHO",
-      "nota": "10"
+      "status": "Tenho",
+      "nota": 5
     }
   ],
   "book": [
@@ -33,16 +26,18 @@
       "id": 1,
       "name": "Maze Runner",
       "autor": "X",
-      "genero": "aventura",
-      "status": "tenho",
-      "nota": "10"
+      "genero": "Aventura",
+      "generoCor": "#009dff",
+      "status": "Lendo",
+      "nota": 10
     },
     {
       "id": 2,
       "name": "Game of Thrones",
       "autor": "George R. R. Martin",
-      "genero": "BR",
-      "status": "Quero",
+      "genero": "Aventura",
+      "generoCor": "#009dff",
+      "status": "Quero Ler",
       "nota": 10
     }
   ],
@@ -51,9 +46,19 @@
       "id": 1,
       "name": "Mercenarios",
       "ano": "2012",
-      "genero": "açao",
-      "status": "tenho",
-      "nota": "10"
+      "genero": "Ação",
+      "generoCor": "#11c2c5",
+      "status": "Já Vi",
+      "nota": 10
+    },
+    {
+      "id": 2,
+      "name": "kljsda",
+      "ano": 2020,
+      "genero": "Comedia",
+      "generoCor": "#7315b2",
+      "status": "Quero Ver",
+      "nota": 2
     }
   ],
   "genre": [
@@ -64,7 +69,7 @@
     },
     {
       "id": 2,
-      "name": "BR",
+      "name": "Battle Royale",
       "color": "#269c34"
     },
     {
@@ -81,6 +86,21 @@
       "id": 5,
       "name": "Terror",
       "color": "#008000"
+    },
+    {
+      "id": 6,
+      "name": "Aventura",
+      "color": "#009dff"
+    },
+    {
+      "id": 7,
+      "name": "Ação",
+      "color": "#11c2c5"
+    },
+    {
+      "id": 8,
+      "name": "Comedia",
+      "color": "#7315b2"
     }
   ]
 }

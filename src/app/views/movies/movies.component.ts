@@ -16,7 +16,7 @@ export class MoviesComponent implements OnInit {
 movie?:Movie;
 movies = new Array<Movie>()
 modificando=false;
-colunas=['id','name','ano','genero','status','nota','acoes']
+colunas=['id','name','ano','genero','generoCor','status','nota','acoes']
 
   constructor(private moviesService:MoviesService,private genresService:GenresService) { }
 
@@ -37,11 +37,23 @@ colunas=['id','name','ano','genero','status','nota','acoes']
   salvar(){
     if(this.movie){
       if(!this.modificando){
+        // Passa genre.color para generoCor
+        this.genres.forEach (genre => {
+          if(this.movie?.genero==genre.name){
+            this.movie.generoCor=genre.color;
+          }
+        });
         this.moviesService.criar(this.movie).subscribe(movie =>{
           this.movie=undefined;
           this.listar();
         });
       }else{
+        // Passa genre.color para generoCor
+        this.genres.forEach (genre => {
+          if(this.movie?.genero==genre.name){
+            this.movie.generoCor=genre.color;
+          }
+        });
         this.moviesService.atualizar(this.movie).subscribe(movie =>{
           this.modificando = false;
           this.movie= undefined;

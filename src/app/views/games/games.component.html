@@ -19,7 +19,15 @@
   <!--COLUNA Genero-->
   <ng-container matColumnDef="genero">
     <th mat-header-cell *matHeaderCellDef>Genero</th>
-    <td mat-cell *matCellDef="let game" >{{game.genero}}</td>
+    <td mat-cell *matCellDef="let game">{{game.genero}}</td>
+  </ng-container>
+  <!--COLUNA GenerocOR-->
+  <ng-container matColumnDef="generoCor">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let game">
+      <div style="width: 20px; height: 20px;background-color:{{game.generoCor}};border-radius:50%;margin-right:10px;">
+      </div>
+    </td>
   </ng-container>
   <!--COLUNA Plataforma-->
   <ng-container matColumnDef="plataforma">
@@ -85,6 +93,7 @@
     </mat-select>
   </mat-form-field>
   <br><br>
+
   <!-- INPUT PLATAFORMA -->
   <mat-form-field appearance="fill">
     <mat-label>Plataforma</mat-label>

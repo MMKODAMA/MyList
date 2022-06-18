@@ -16,7 +16,7 @@ export class BooksComponent implements OnInit {
 book?:Book;
 books = new Array<Book>()
 modificando=false;
-colunas=['id','name','autor','genero','status','nota','acoes']
+colunas=['id','name','autor','genero','generoCor','status','nota','acoes']
 
   constructor(private booksService:BooksService,private genresService:GenresService) { }
 
@@ -37,11 +37,23 @@ colunas=['id','name','autor','genero','status','nota','acoes']
   salvar(){
     if(this.book){
       if(!this.modificando){
+        // Passa genre.color para generoCor
+        this.genres.forEach (genre => {
+          if(this.book?.genero==genre.name){
+            this.book.generoCor=genre.color;
+          }
+        });
         this.booksService.criar(this.book).subscribe(book =>{
           this.book=undefined;
           this.listar();
         });
       }else{
+        // Passa genre.color para generoCor
+        this.genres.forEach (genre => {
+          if(this.book?.genero==genre.name){
+            this.book.generoCor=genre.color;
+          }
+        });
         this.booksService.atualizar(this.book).subscribe(book =>{
           this.modificando = false;
           this.book= undefined;
